@@ -38,14 +38,15 @@ In the current directory,	`map_matching.py` is the source code.
     the passing length by two consecutive samples should not be way larger than the distance between the two projection points on the correspondingly mapped segments, 
     meaning that the difference should not be larger than a threshold. Specifically, the valid candidate should suffice:
                     
-		    ```AvgSpeed(S1,S2) * TimeGap  <=  Dist(P1,P2) + thrsh,```  
+		    `AvgSpeed(S1,S2) * TimeGap  <=  Dist(P1,P2) + thrsh,`  
     where thrsh = max(SpeedLimit) * TimeGap  
 	3). Using 1-Neareast Neighbor strategy, finally determine the unique segment and link among the candidates for each sample.  
 	4). Applying smoothing singular strategy using slicing window. This is used to refine the final match result. If the two mapped links of previous sample and next sample are same, but different from the mapped link of the current sample, then we revise it to be same. This is based on the scenarios that commonly happen at a crossing.  
 
 5. Save mapmatching result to file.  
 6. Derive link slopes and calculate average error. For each link, compute the slope between the adjacent two samples S1, S2 of the same probe that are map matched on it by the following formula:  
-				```arctan (alti_diff(S1, S2) /dist(S1, S2))```  
+				
+				`arctan (alti_diff(S1, S2) /dist(S1, S2))`  
 	take the mean of these slopes as the estimated average slope of this link.  
 7. Evaluation and visualization. Compute the difference between the truth average slope and the estimated average slope for each available link, as the residual error. Scatter plot of error is drawed.  
 
