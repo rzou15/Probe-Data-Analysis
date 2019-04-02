@@ -53,7 +53,7 @@ In the current directory,	`map_matching.py` is the source code.
 
 ## Running Requirement  
     Python 3.5+
-    numpy 1.1
+    numpy 1.13+
 
 Before running the code, all the original dataset must be contained in the `./probe_data_map_matching/` of the current directory. Running code first time will generate many `.pk` files which save the intermediate data results for later use.
 
